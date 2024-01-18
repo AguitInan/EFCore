@@ -8,17 +8,6 @@ using System.Threading.Tasks;
 
 namespace Exercice01Personnage.Data
 {
-
-    internal class DatabaseContext : DbContext
-    {
-        public DbSet<Personnage> Personnages { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\demo01ado;Database=Personnage;Trusted_Connection=True;");
-        }
-    }
-
     public class Database
     {
         private DatabaseContext context;
