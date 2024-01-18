@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Exercice01Personnage.Classes;
 
-[Table("Personnage")]
+//[Table("Personnage")]
 internal class Personnage
 {
     public int Id { get; set; }
