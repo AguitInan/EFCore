@@ -97,8 +97,8 @@ namespace Exercice01Personnage.Classes
             Console.Write("Entrez les dégâts du personnage : ");
             int degats = int.Parse(Console.ReadLine());
 
-            Console.Write("Entrez le nombre de personnes tuées par le personnage : ");
-            int nombrePersonneTues = int.Parse(Console.ReadLine());
+            //Console.Write("Entrez le nombre de personnes tuées par le personnage : ");
+            //int nombrePersonneTues = int.Parse(Console.ReadLine());
 
             Personnage nouveauPersonnage = new Personnage
             {
@@ -107,7 +107,7 @@ namespace Exercice01Personnage.Classes
                 Armure = armure,
                 Degats = degats,
                 DateCreation = DateTime.Now,
-                NombrePersonneTues = nombrePersonneTues
+                NombrePersonneTues = 0
             };
 
             database.CreerPersonnage(nouveauPersonnage);
@@ -135,8 +135,8 @@ namespace Exercice01Personnage.Classes
             Console.Write("Entrez les nouveaux dégâts du personnage (actuel: " + personnage.Degats + "): ");
             personnage.Degats = int.Parse(Console.ReadLine());
 
-            Console.Write("Entrez le nouveau nombre de personnes tuées par le personnage (actuel: " + personnage.NombrePersonneTues + "): ");
-            personnage.NombrePersonneTues = int.Parse(Console.ReadLine());
+            //Console.Write("Entrez le nouveau nombre de personnes tuées par le personnage (actuel: " + personnage.NombrePersonneTues + "): ");
+            //personnage.NombrePersonneTues = int.Parse(Console.ReadLine());
 
             database.MettreAJourPersonnage(personnage);
             Console.WriteLine("Personnage mis à jour avec succès !");
@@ -151,16 +151,17 @@ namespace Exercice01Personnage.Classes
             }
         }
 
+
         private void TaperPersonnage()
         {
-            Console.Write("Entrez l'Id du personnage à taper : ");
-            int id = int.Parse(Console.ReadLine());
+            Console.Write("Entrez l'Id du personnage attaquant : ");
+            int attaquantId = int.Parse(Console.ReadLine());
 
-            Console.Write("Entrez les dégâts à infliger : ");
-            int degats = int.Parse(Console.ReadLine());
+            Console.Write("Entrez l'Id du personnage défenseur : ");
+            int defenseurId = int.Parse(Console.ReadLine());
 
-            database.TaperPersonnage(id, degats);
-            Console.WriteLine("Dégâts infligés au personnage !");
+            database.TaperPersonnage(attaquantId, defenseurId);
+            Console.WriteLine("L'attaquant a frappé le défenseur !");
         }
 
         private void AfficherPersonnagesAvecPVSuperieursMoyenne()

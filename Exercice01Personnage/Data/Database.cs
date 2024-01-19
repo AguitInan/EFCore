@@ -35,38 +35,46 @@ namespace Exercice01Personnage.Data
         }
 
 
-        internal void TaperPersonnage(int id, int degats)
+
+        internal void TaperPersonnage(int attaquantId, int defenseurId)
         {
-            var personnage = context.Personnages.FirstOrDefault(p => p.Id == id);
-            if (personnage != null)
+            var attaquant = context.Personnages.FirstOrDefault(p => p.Id == attaquantId);
+            var defenseur = context.Personnages.FirstOrDefault(p => p.Id == defenseurId);
+
+            if (attaquant != null && defenseur != null)
             {
-                int degatsRestants = degats - personnage.Armure;
-                personnage.Armure -= degats;
+                int degatsRestants = attaquant.Degats - defenseur.Armure;
+                defenseur.Armure -= attaquant.Degats;
 
                 if (degatsRestants > 0)
                 {
-                    personnage.PointsDeVie -= degatsRestants;
+                    defenseur.PointsDeVie -= degatsRestants;
                 }
 
-                if (personnage.PointsDeVie < 0)
+                if (defenseur.PointsDeVie < 0)
                 {
-                    personnage.PointsDeVie = 0;
+                    defenseur.PointsDeVie = 0;
                 }
-                if (personnage.Armure < 0)
+                if (defenseur.Armure < 0)
                 {
-                    personnage.Armure = 0;
+                    defenseur.Armure = 0;
                 }
 
-                if (personnage.PointsDeVie == 0 && personnage.Armure == 0)
+                if (defenseur.PointsDeVie == 0 && defenseur.Armure == 0)
                 {
-                    context.Personnages.Remove(personnage);
-                    Console.WriteLine("Le personnage est mort et a été supprimé.");
+                    attaquant.NombrePersonneTues++;
+                    context.Personnages.Remove(defenseur);
+                    Console.WriteLine("Le personnage défenseur est mort et a été supprimé.");
                 }
+
                 context.SaveChanges();
             }
             else
             {
-                Console.WriteLine("Personnage non trouvé !");
+                if (attaquant == null)
+                    Console.WriteLine("Personnage attaquant non trouvé !");
+                if (defenseur == null)
+                    Console.WriteLine("Personnage défenseur non trouvé !");
             }
         }
 
