@@ -19,7 +19,16 @@ namespace Exercice02HotelAgain.Models
         public int HotelId { get; set; }
         public Hotel Hotel { get; set; }
 
- 
+        // Relation: Une chambre peut être concernée par plusieurs réservations (selon la période)
+        public List<Reservation> Reservations { get; set; } = new List<Reservation>();
+
+
+        // Constructeur
+
+        public Chambre()
+        {
+            Reservations = new List<Reservation>();
+        }
 
 
 
