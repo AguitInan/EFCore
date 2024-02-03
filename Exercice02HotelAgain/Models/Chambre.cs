@@ -37,6 +37,11 @@ namespace Exercice02HotelAgain.Models
             Tarif = tarif;
         }
 
-
+        public enum StatutChambre
+        {
+            Libre,
+            Occupe,
+            EnNettoyage
+        }
     }
 }
