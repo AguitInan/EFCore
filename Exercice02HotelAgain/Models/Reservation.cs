@@ -32,6 +32,24 @@ namespace Exercice02HotelAgain.Models
 
         // Constructeur
 
+        public Reservation()
+        {
+        }
+        //public Reservation(int reservationId, StatutReservation statut, List<Chambre> chambres, Client client)
+        //{
+        //    ReservationId = reservationId;
+        //    Statut = statut;
+        //    Chambres = chambres ?? new List<Chambre>(); // Initialise avec une liste vide si null est passé
+        //    Client = client;
+        //    HotelId = 1;
+        //}
 
+        public enum StatutReservation
+        {
+            Prevu,
+            EnCours,
+            Fini,
+            Annule
+        }
     }
 }
