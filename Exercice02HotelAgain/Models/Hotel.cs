@@ -28,7 +28,22 @@ namespace Exercice02HotelAgain.Models
         }
 
 
+        // Méthodes pour gérer l'hôtel (ajouter client, ajouter chambre, créer réservation, etc.)
 
+        public void AjouterClient(Client client)
+        {
+            Clients.Add(client);
+        }
+
+        public void AjouterChambre(Chambre chambre)
+        {
+            Chambres.Add(chambre);
+        }
+
+        public void CreerReservation(Reservation reservation)
+        {
+            Reservations.Add(reservation);
+        }
 
     }
 }
