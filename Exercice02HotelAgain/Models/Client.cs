@@ -24,7 +24,13 @@ namespace Exercice02HotelAgain.Models
         {
             Reservations = new List<Reservation>();
         }
-
+        public Client(int clientId, string nom, string prenom, string numeroTelephone)
+        {
+            ClientId = clientId;
+            Nom = nom;
+            Prenom = prenom;
+            NumeroTelephone = numeroTelephone;
+        }
 
     }
 }
