@@ -29,7 +29,13 @@ namespace Exercice02HotelAgain.Models
         {
             Reservations = new List<Reservation>();
         }
-
+        public Chambre(int chambreId, StatutChambre statut, int nombreDeLits, decimal tarif)
+        {
+            ChambreId = chambreId;
+            Statut = statut;
+            NombreDeLits = nombreDeLits;
+            Tarif = tarif;
+        }
 
 
     }
