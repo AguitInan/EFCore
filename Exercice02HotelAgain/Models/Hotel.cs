@@ -18,7 +18,14 @@ namespace Exercice02HotelAgain.Models
         public List<Reservation> Reservations { get; set; } = new List<Reservation>();
 
 
+        // Constructeur
 
+        public Hotel()
+        {
+            Clients = new List<Client>();
+            Chambres = new List<Chambre>();
+            Reservations = new List<Reservation>();
+        }
 
 
 
