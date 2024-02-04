@@ -63,6 +63,16 @@ namespace Exercice02HotelAgain.Data
             context.SaveChanges();
         }
 
+        internal Client ObtenirClientParId(int clientId)
+        {
+            // Trouver un client par son identifiant
+            return context.Clients.FirstOrDefault(c => c.ClientId == clientId);
+        }
 
+        internal Chambre ObtenirChambreParNumero(int chambreNumero)
+        {
+            // Trouver une chambre par son numéro
+            return context.Chambres.FirstOrDefault(c => c.ChambreId == chambreNumero);
+        }
     }
 }
