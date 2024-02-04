@@ -50,7 +50,18 @@ namespace Exercice02HotelAgain.Data
             }
         }
 
+        internal void AjouterClient(Client client)
+        {
+            context.Clients.Add(client);
+            context.SaveChanges();
+        }
 
+        internal void AvancerDuneJournee()
+        {
+            // Logique pour avancer d'une journée, par exemple, mise à jour des dates de réservation
+            // Plus de logique ici si nécessaire
+            context.SaveChanges();
+        }
 
 
     }
