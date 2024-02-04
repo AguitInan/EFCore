@@ -71,6 +71,19 @@ namespace Exercice02HotelAgain
             Console.WriteLine("=== Gestion Hôtel ===");
         }
 
+        private void VoirReservations()
+        {
+            var reservations = database.VoirReservations();
+            foreach (var reservation in reservations)
+            {
+                //Console.WriteLine($"Test {reservation.Client.Prenom}");
+                Console.WriteLine($"Reservation ID: {reservation.ReservationId}, Client: {reservation.Client.Prenom} {reservation.Client.Nom}, Statut: {reservation.Statut}");
+            }
+        }
+
+
+
+
 
 
     }
