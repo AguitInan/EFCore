@@ -38,7 +38,17 @@ namespace Exercice02HotelAgain.Data
             return context.Reservations.ToList();
         }
 
-
+        internal void FaireCheckOut(int reservationId)
+        {
+            var reservation = context.Reservations.Find(reservationId);
+            if (reservation != null)
+            {
+                // Mettre à jour le statut de la réservation et éventuellement la chambre
+                reservation.Statut = StatutReservation.Fini;
+                // Plus de logique ici si nécessaire
+                context.SaveChanges();
+            }
+        }
 
 
 
