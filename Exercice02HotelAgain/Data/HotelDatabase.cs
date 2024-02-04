@@ -17,7 +17,11 @@ namespace Exercice02HotelAgain.Data
             context = new ApplicationDbContext();
         }
 
-
+        internal void FaireReservation(Reservation reservation)
+        {
+            context.Reservations.Add(reservation);
+            context.SaveChanges();
+        }
 
 
 
