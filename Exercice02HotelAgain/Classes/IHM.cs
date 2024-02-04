@@ -131,7 +131,13 @@ namespace Exercice02HotelAgain
             Console.WriteLine("Check-out réalisé avec succès.");
         }
 
-
+        private void AnnulerReservation()
+        {
+            Console.WriteLine("Entrez l'identifiant de la réservation à annuler:");
+            int reservationId = int.Parse(Console.ReadLine());
+            database.AnnulerReservation(reservationId);
+            Console.WriteLine("Réservation annulée avec succès.");
+        }
 
 
 
