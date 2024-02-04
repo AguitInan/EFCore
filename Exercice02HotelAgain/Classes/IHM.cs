@@ -160,6 +160,10 @@ namespace Exercice02HotelAgain
             Console.WriteLine("Client ajouté avec succès.");
         }
 
-
+        //private void AvancerDuneJournee()
+        //{
+        //    database.AvancerDuneJournee();
+        //    Console.WriteLine("Une journée a été avancée dans le système.");
+        //}
     }
 }
