@@ -81,7 +81,14 @@ namespace Exercice02HotelAgain
             }
         }
 
-
+        //private void AfficherTousLesPersonnages()
+        //{
+        //    var personnages = database.ObtenirTousLesPersonnages();
+        //    foreach (var personnage in personnages)
+        //    {
+        //        Console.WriteLine($"{personnage.Id} - {personnage.Pseudo} - PV: {personnage.PointsDeVie} - Armure: {personnage.Armure} - Degats: {personnage.Degats} - Date de création: {personnage.DateCreation} - Nombre de personnes tuées: {personnage.NombrePersonneTues}");
+        //    }
+        //}
 
 
 
