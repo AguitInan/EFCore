@@ -33,7 +33,10 @@ namespace Exercice02HotelAgain.Data
             }
         }
 
-
+        internal List<Reservation> VoirReservations()
+        {
+            return context.Reservations.ToList();
+        }
 
 
 
