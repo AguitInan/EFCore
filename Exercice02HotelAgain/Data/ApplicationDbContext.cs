@@ -21,7 +21,10 @@ namespace Exercice02HotelAgain.Data
         {
         }
 
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data source=(localdb)\\demo01ado; Database=HotelAgain;");
+        }
 
 
 
