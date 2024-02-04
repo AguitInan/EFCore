@@ -79,7 +79,19 @@ namespace Exercice02HotelAgain.Data
 
 
 
+            //// Configuration pour la relation plusieurs-à-plusieurs entre Chambre et Reservation
+            //modelBuilder.Entity<Reservation>()
+            //    .HasMany(r => r.Chambres)
+            //    .WithMany(c => c.Reservations)
+            //    .UsingEntity(j => j.ToTable("ReservationChambres")); // Nom de la table de jonction
 
+            //// Ajoutez ici des configurations supplémentaires si nécessaire
+
+            //// Exemple d'ajout de données initiales à la base de données
+            ////modelBuilder.Entity<Hotel>().HasData(
+            ////    new Hotel() { Identifiant = 1, Nom = "Hotel Sunset Boulevard" },
+            ////    // ...
+            ////);
 
 
 
