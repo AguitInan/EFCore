@@ -23,7 +23,15 @@ namespace Exercice02HotelAgain.Data
             context.SaveChanges();
         }
 
-
+        internal void AnnulerReservation(int reservationId)
+        {
+            var reservation = context.Reservations.Find(reservationId);
+            if (reservation != null)
+            {
+                reservation.Statut = StatutReservation.Annule;
+                context.SaveChanges();
+            }
+        }
 
 
 
