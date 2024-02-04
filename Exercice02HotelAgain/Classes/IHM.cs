@@ -66,6 +66,11 @@ namespace Exercice02HotelAgain
             }
         }
 
+        private void AfficherTitre()
+        {
+            Console.WriteLine("=== Gestion Hôtel ===");
+        }
+
 
 
     }
