@@ -61,6 +61,15 @@ namespace Exercice02HotelAgain.Data
 
 
 
+            //// Configurer la relation plusieurs-à-plusieurs entre Chambre et Reservation
+            //modelBuilder.Entity<Reservation>()
+            //    .HasMany(r => r.Chambres)
+            //    .WithMany(c => c.Reservations)
+            //    .UsingEntity(j => j.ToTable("ReservationChambres"))
+            //    .HasOne<Reservation>().WithMany().HasForeignKey("ReservationId").OnDelete(DeleteBehavior.NoAction);
+            //// Ou utilisez .OnDelete(DeleteBehavior.Restrict) selon votre politique de suppression préférée
+
+            //// ... autres configurations, assurez-vous de configurer la suppression pour d'autres relations si nécessaire
 
 
 
