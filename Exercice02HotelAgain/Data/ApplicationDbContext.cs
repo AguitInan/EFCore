@@ -45,6 +45,17 @@ namespace Exercice02HotelAgain.Data
             base.OnModelCreating(modelBuilder);
 
 
+            //    // Configuration pour la relation plusieurs-à-plusieurs entre Chambre et Reservation
+            //    modelBuilder.Entity<Reservation>()
+            //        .HasMany(r => r.Chambres)
+            //        .WithMany(c => c.Reservations)
+            //        .UsingEntity(j => j.ToTable("ReservationChambres"))
+            //        .HasOne<Chambre>().WithMany().HasForeignKey("ChambreNumero").OnDelete(DeleteBehavior.NoAction); // Clé étrangère et comportement de suppression pour Chambre
+            //.HasOne<Reservation>().WithMany().HasForeignKey("ReservationIdentifiant").OnDelete(DeleteBehavior.NoAction); // Clé étrangère et comportement de suppression pour Reservation
+
+            //    // ... autres configurations
+
+            //    base.OnModelCreating(modelBuilder);
 
 
 
