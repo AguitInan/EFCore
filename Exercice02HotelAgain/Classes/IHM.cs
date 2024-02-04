@@ -90,7 +90,38 @@ namespace Exercice02HotelAgain
         //    }
         //}
 
+        private void FaireReservation()
+        {
+            Console.WriteLine("Entrez les informations pour la nouvelle réservation:");
+            Console.WriteLine("ID Client:");
+            int clientId = int.Parse(Console.ReadLine());
+            Console.WriteLine("Numéro de chambre:");
+            int chambreNumero = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Date de début (yyyy-MM-dd):");
+            //DateTime dateDebut = DateTime.Parse(Console.ReadLine());
+            //Console.WriteLine("Date de fin (yyyy-MM-dd):");
+            //DateTime dateFin = DateTime.Parse(Console.ReadLine());
 
+            var client = database.ObtenirClientParId(clientId);
+            var chambre = database.ObtenirChambreParNumero(chambreNumero);
+
+            if (client != null && chambre != null)
+            {
+                var reservation = new Reservation
+                {
+                    Client = client,
+                    Chambres = new List<Chambre> { chambre },
+                    Statut = StatutReservation.Prevu,
+                    HotelId = 1
+                };
+                database.FaireReservation(reservation);
+                Console.WriteLine("Réservation créée avec succès.");
+            }
+            else
+            {
+                Console.WriteLine("Client ou chambre introuvable.");
+            }
+        }
 
 
     }
