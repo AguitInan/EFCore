@@ -123,6 +123,18 @@ namespace Exercice02HotelAgain
             }
         }
 
+        private void FaireCheckOut()
+        {
+            Console.WriteLine("Entrez l'identifiant de la réservation pour le check-out:");
+            int reservationId = int.Parse(Console.ReadLine());
+            database.FaireCheckOut(reservationId);
+            Console.WriteLine("Check-out réalisé avec succès.");
+        }
+
+
+
+
+
 
     }
 }
