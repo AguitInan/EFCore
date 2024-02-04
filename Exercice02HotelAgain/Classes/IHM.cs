@@ -139,7 +139,26 @@ namespace Exercice02HotelAgain
             Console.WriteLine("Réservation annulée avec succès.");
         }
 
+        private void AjouterClient()
+        {
+            Console.WriteLine("Entrez les informations pour le nouveau client:");
+            Console.WriteLine("Nom:");
+            string nom = Console.ReadLine();
+            Console.WriteLine("Prénom:");
+            string prenom = Console.ReadLine();
+            Console.WriteLine("Numéro de téléphone:");
+            string numeroTelephone = Console.ReadLine();
 
+            var client = new Client
+            {
+                Nom = nom,
+                Prenom = prenom,
+                NumeroTelephone = numeroTelephone
+            };
+
+            database.AjouterClient(client);
+            Console.WriteLine("Client ajouté avec succès.");
+        }
 
 
     }
